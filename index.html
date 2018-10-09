@@ -33,7 +33,10 @@
             </section>
 
             <section>
-                <h1>Kubernetes</h1>
+                <img src="img/Kubernetes_logo.svg" style="width: 50%;background: white; border-color: white; border-width: 40px">
+                <br/>
+                <strong>K8s</strong>
+                <br/> Greek for "governor"
             </section>
 
             <section data-markdown>
@@ -46,14 +49,19 @@
             <section data-markdown>
                 <textarea data-template>
                 ## Facts
-                * Current version 1.12
+                * Current version 1.12 (09/2018)
+                * Apache License 2.0
+                * Maintained by CNCF (Cloud native computing foundation)
+                * Implemented in Go
                 </textarea>
             </section>
 
             <section data-markdown>
                 <textarea data-template>
                 ## History
-                * Google ...
+                * First release in 2015
+                * Developed by Google
+                * influenced by Google's Borg system
 				        </textarea>
             </section>
 
@@ -67,21 +75,46 @@
             <section data-markdown>
                 <textarea data-template>
                 ## What you need
-                * Lots of time to read docs
+                * Lots of time for RTFM
+                * Linux nodes
+                * K8s distribution
+                * (Internet)
 				        </textarea>
             </section>
 
             <section data-markdown>
                 <textarea data-template>
-              ## Distributions
-              * Cloud
-              * On-premise
-              * OpenStack
-              * Red Hat Openshift
-              * Rancher 2.0
-              * Mesos DC/OS
-              * Minukube (local development)
+              ## Types of distributions
+              * Hosted Solutions
+              * Turnkey cloud solutions
+              * On-Premises turnkey cloud solutions
+              * Custom cloud solutions
+              * Custom On-Premise cloud solutions
+              * Local machine solutions
               </textarea>
+            </section>
+
+            <section>
+                <section data-markdown>
+                    <textarea data-template>
+                    ## Architecture
+                    * K8s master nodes
+                      * dedicated nodes
+                      * etcd (distributed KV store): K8s configuration
+                      * API server: REST API
+                      * scheduler
+                      * controller manager
+                    * K8s slave nodes
+                      * container runtime (docker, rkt, ...)
+                      * kubelet: daemon for starting/stopping containers
+                      * cadvisor: resource monitoring of containers
+                      * kube-proxy: proxy + load balancer to access containers
+                      * + pods
+                    </textarea>
+                </section>
+                <section>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Kubernetes.png">
+                </section>
             </section>
 
             <section>
@@ -91,26 +124,54 @@
                     * pod
                     * service
                     * deployment
-                    * label
+                    * labels and selectors
                     * namespace
                     </textarea>
                 </section>
 
                 <section data-markdown>
                     <textarea data-template>
-                    ## Pod
+                    ## pod
+                    * smallest deployment unit
+                    * running on one node
+                    * one or more containers
+                    * one unique IP address per POD
                     </textarea>
                 </section>
 
                 <section data-markdown>
                     <textarea data-template>
                     ## service
+                    * set of pods working together
+                    * stable IP address and DNS name
+                    * service discovery
+                    * load balancing
+                    * expose service internally or externally
                     </textarea>
                 </section>
 
                 <section data-markdown>
                     <textarea data-template>
                     ## deployment
+                    </textarea>
+                </section>
+
+                <section data-markdown>
+                    <textarea data-template>
+                    ## labels and selectors
+                    * key value pair
+                    * can be attached to any API object (pod, service)
+                    * "label selectors" are queries against labels that resolve to matching objects
+
+                    ```
+                    tier=back-end AND release_track=canary
+                    ```
+                    </textarea>
+                </section>
+
+                <section data-markdown>
+                    <textarea data-template>
+                    ## namespace
                     </textarea>
                 </section>
             </section>
@@ -120,8 +181,19 @@
               ## Commands
               * kubectl: the command line util to talk to your cluster
               * kubeadm: the command to bootstrap the cluster
-              * kubelet: the component that runs on all of the machines in your cluster and does things like starting pods and containers
               * minikube: CLI app for setup of a local cluster
+              </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+              ## Helm
+              * Package manager for K8s
+              * packaging format: `charts`
+              * describes deployment of a simple or complex application stack
+              * yaml files
+              * packaged and versioned
+              * like docker compose file
               </textarea>
             </section>
 
@@ -132,7 +204,8 @@
                 * Ubuntu
                 * Minikube
 
-				        https://github.com/cgoeller/kubernetes-slides/examples
+                * Dashboard: http://localhost:30000
+                * https://github.com/cgoeller/kubernetes-slides/examples
           			</textarea>
             </section>
 
@@ -140,7 +213,7 @@
                 <textarea data-template>
 					      # The end.
 
-					      https://kubernetes.io/
+					      https://kubernetes.io
 					      https://github.com/cgoeller/kubernetes-slides
 					      </textarea>
             </section>
