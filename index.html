@@ -125,7 +125,6 @@
                     * service
                     * deployment
                     * labels and selectors
-                    * namespace
                     </textarea>
                 </section>
 
@@ -134,7 +133,8 @@
                     ## pod
                     * smallest deployment unit
                     * running on one node
-                    * one or more containers
+                    * set of resources that are meant to be scheduled together
+                    * one or more containers and volumes
                     * one unique IP address per POD
                     </textarea>
                 </section>
@@ -153,6 +153,9 @@
                 <section data-markdown>
                     <textarea data-template>
                     ## deployment
+                    * place where containers, volumes, secrets and configurations are defined
+                    * define the number of replicas
+                    * replication & placement strategies
                     </textarea>
                 </section>
 
@@ -171,7 +174,24 @@
 
                 <section data-markdown>
                     <textarea data-template>
-                    ## namespace
+                    ## Further key elements
+                    * Volumes
+                    * Replica sets
+                    * Stateful sets
+                    * Daemon sets
+                    * Cron jobs
+                    * Jobs
+                    </textarea>
+                </section>
+
+                <section data-markdown>
+                    <textarea data-template>
+                    ## Features
+                    * auto-scaling
+                    * service discovery (DNS, env vars)
+                    * persistence
+                    * health checks
+                    * rolling updates
                     </textarea>
                 </section>
             </section>
@@ -207,6 +227,17 @@
                 * Dashboard: http://localhost:30000
                 * https://github.com/cgoeller/kubernetes-slides/examples
           			</textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                ## Pros
+                * large community
+                * production ready
+
+                ## Cons
+                * complexity
+                </textarea>
             </section>
 
             <section data-markdown>
